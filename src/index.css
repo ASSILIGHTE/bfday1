@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: #F4F8FA;
+    color: #1E3A5F;
+    font-family: 'Fredoka', 'Quicksand', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Sky Paper Texture Background Overlay */
+.paper-texture {
+  background-image: radial-gradient(#4A88C7 0.35px, transparent 0.35px), radial-gradient(#B8D5EA 0.35px, #F4F8FA 0.35px);
+  background-size: 16px 16px;
+  background-position: 0 0, 8px 8px;
+  opacity: 0.12;
+}
+
+/* Grain Noise Overlay */
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* Washi Tapes for Sky Blue Aesthetic */
+.washi-tape-skyblue {
+  background: rgba(91, 155, 213, 0.75);
+  backdrop-filter: blur(2px);
+  border: 1px dashed rgba(58, 117, 180, 0.4);
+  box-shadow: 0 2px 4px rgba(30, 58, 95, 0.08);
+}
+
+.washi-tape-navy {
+  background: rgba(30, 58, 95, 0.85);
+  color: white;
+  backdrop-filter: blur(2px);
+  border: 1px dashed rgba(15, 23, 42, 0.4);
+  box-shadow: 0 2px 4px rgba(30, 58, 95, 0.08);
+}
+
+.washi-tape-cloud {
+  background: rgba(225, 238, 247, 0.85);
+  backdrop-filter: blur(2px);
+  border: 1px stroke rgba(184, 213, 234, 0.6);
+  box-shadow: 0 2px 4px rgba(30, 58, 95, 0.08);
+}
+
+/* Polaroid Card Shadow */
+.polaroid-shadow {
+  box-shadow: 0 12px 28px -6px rgba(30, 58, 95, 0.14), 0 8px 12px -6px rgba(30, 58, 95, 0.08);
+}
+
+.polaroid-shadow-lg {
+  box-shadow: 0 22px 40px -12px rgba(30, 58, 95, 0.22), 0 12px 18px -8px rgba(30, 58, 95, 0.12);
+}
+
+/* Glowing Sky Blue & Amber Heart */
+.glow-heart {
+  filter: drop-shadow(0 0 10px rgba(74, 136, 199, 0.5));
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F4F8FA;
+}
+::-webkit-scrollbar-thumb {
+  background: #5B9BD5;
+  border-radius: 999px;
+}
