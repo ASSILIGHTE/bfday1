@@ -29,10 +29,10 @@ export function LoveLetterEnvelope() {
     if (e) e.stopPropagation();
     soundFx.playHeartChime();
     const sweetMsgs = [
-      "I'm so lucky to have you ♡",
-      "Pahlawan tanpa jubahku ✨",
-      "Kamu tempat ternyaman aku! ☁️",
-      "Happy Boyfriend Day, my love! 💖",
+      "You make my heart deg-degan! ☁️",
+      "Forever partner in crime aku 🤝",
+      "You are my favorite human ever! 🧢",
+      "I love you so much ya! 💖",
       "1000/10 best boyfriend award! 🏆"
     ];
     const randomMsg = sweetMsgs[Math.floor(Math.random() * sweetMsgs.length)];
@@ -40,32 +40,32 @@ export function LoveLetterEnvelope() {
   };
 
   return (
-    <div className="relative inline-block my-4 z-40 pointer-events-auto">
+    <div className="relative inline-block my-1 sm:my-4 z-40 pointer-events-auto">
       {/* Envelope Interactive Sky Blue Button */}
       <motion.button
         type="button"
         whileHover={{ scale: 1.05, rotate: -2 }}
         whileTap={{ scale: 0.94 }}
         onClick={handleOpen}
-        className="relative bg-[#EDF4F8] p-4 sm:p-5 rounded-xl border-2 border-[#B8D5EA] shadow-lg cursor-pointer group flex flex-col items-center justify-center w-64 sm:w-72 select-none z-30 pointer-events-auto text-center font-sans"
+        className="relative bg-[#EDF4F8] p-2.5 xs:p-3 sm:p-5 rounded-xl border-2 border-[#B8D5EA] shadow-lg cursor-pointer group flex flex-col items-center justify-center w-48 xs:w-56 sm:w-72 select-none z-30 pointer-events-auto text-center font-sans"
       >
         {/* Envelope Top Flap Simulation */}
-        <div className="absolute top-0 left-0 right-0 h-10 bg-[#D0E3F0] rounded-t-xl border-b border-[#B8D5EA]/60 flex justify-center items-end pb-1 pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-6 xs:h-8 sm:h-10 bg-[#D0E3F0] rounded-t-xl border-b border-[#B8D5EA]/60 flex justify-center items-end pb-0.5 sm:pb-1 pointer-events-none" />
 
         {/* Postage Stamp */}
-        <div className="absolute top-2 right-2 rotate-6 pointer-events-none">
+        <div className="absolute top-1 right-1 sm:top-2 sm:right-2 rotate-6 pointer-events-none scale-75 xs:scale-90 sm:scale-100">
           <PostageStamp text="SKY MAIL ☁️" date="03 OCT" />
         </div>
 
         {/* Sky Blue Wax Seal Button */}
-        <div className="relative z-10 my-3 bg-[#5B9BD5] text-white p-3.5 rounded-full shadow-md group-hover:scale-110 transition-transform flex items-center justify-center pointer-events-none">
-          <Heart className="w-6 h-6 fill-white animate-pulse" />
+        <div className="relative z-10 my-1.5 xs:my-2 sm:my-3 bg-[#5B9BD5] text-white p-2 xs:p-2.5 sm:p-3.5 rounded-full shadow-md group-hover:scale-110 transition-transform flex items-center justify-center pointer-events-none">
+          <Heart className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 fill-white animate-pulse" />
         </div>
 
-        <p className="font-handwriting text-2xl text-[#1E3A5F] font-bold z-10 mt-1 pointer-events-none">
+        <p className="font-handwriting text-lg xs:text-xl sm:text-2xl text-[#1E3A5F] font-bold z-10 mt-0.5 pointer-events-none">
           A Special Letter For You 💌
         </p>
-        <span className="text-xs font-rounded text-[#3A75B4] bg-[#D0E3F0] px-3.5 py-1 rounded-full z-10 mt-1.5 font-bold animate-bounce pointer-events-none border border-[#B8D5EA]">
+        <span className="text-[9px] xs:text-[10px] sm:text-xs font-rounded text-[#3A75B4] bg-[#D0E3F0] px-2.5 sm:px-3.5 py-0.5 sm:py-1 rounded-full z-10 mt-0.5 sm:mt-1 font-bold animate-bounce pointer-events-none border border-[#B8D5EA]">
           tap untuk buka surat cinta ♡
         </span>
       </motion.button>
@@ -73,21 +73,21 @@ export function LoveLetterEnvelope() {
       {/* Love Letter Modal Popover */}
       <AnimatePresence>
         {isOpen && (
-          <div className="fixed inset-0 z-[99999] flex items-center justify-center p-4 bg-black/50 backdrop-blur-md pointer-events-auto">
+          <div className="fixed inset-0 z-[99999] flex items-center justify-center p-3 sm:p-4 bg-black/50 backdrop-blur-md pointer-events-auto">
             <motion.div
               initial={{ scale: 0.7, opacity: 0, y: 50, rotate: -3 }}
               animate={{ scale: 1, opacity: 1, y: 0, rotate: 0 }}
               exit={{ scale: 0.7, opacity: 0, y: 50, rotate: 3 }}
               transition={{ type: 'spring', stiffness: 260, damping: 20 }}
               onClick={handleLetterTap}
-              className="relative bg-[#F4F8FA] p-6 sm:p-8 rounded-2xl max-w-md w-full polaroid-shadow-lg border-4 border-[#5B9BD5] paper-texture overflow-hidden text-center select-none cursor-pointer pointer-events-auto"
+              className="relative bg-[#F4F8FA] p-4 xs:p-5 sm:p-8 rounded-2xl max-w-[94vw] sm:max-w-md w-full polaroid-shadow-lg border-3 sm:border-4 border-[#5B9BD5] paper-texture overflow-hidden text-center select-none cursor-pointer pointer-events-auto max-h-[90vh] flex flex-col justify-between"
             >
               {/* Floating Tap Message Toast */}
               {tapMessage && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="mb-2 inline-block bg-[#EDF4F8] text-[#1E3A5F] px-3.5 py-1 rounded-full text-sm font-handwriting border border-[#7CB5EC] font-bold"
+                  className="mb-1.5 inline-block bg-[#EDF4F8] text-[#1E3A5F] px-3 py-0.5 rounded-full text-xs sm:text-sm font-handwriting border border-[#7CB5EC] font-bold"
                 >
                   {tapMessage}
                 </motion.div>
@@ -97,23 +97,23 @@ export function LoveLetterEnvelope() {
               <button
                 type="button"
                 onClick={handleClose}
-                className="absolute top-3 right-3 p-2 bg-[#D0E3F0] hover:bg-[#B8D5EA] text-[#1E3A5F] rounded-full transition-colors z-30 cursor-pointer pointer-events-auto"
+                className="absolute top-2 right-2 sm:top-3 sm:right-3 p-1.5 sm:p-2 bg-[#D0E3F0] hover:bg-[#B8D5EA] text-[#1E3A5F] rounded-full transition-colors z-30 cursor-pointer pointer-events-auto"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
 
               {/* Header */}
-              <div className="flex justify-between items-center mb-3">
+              <div className="flex justify-between items-center mb-2 sm:mb-3">
                 <PostageStamp text="EXPRESS MAIL ✈️" date="BOYFRIEND DAY" />
-                <HeartDoodle className="w-10 h-10 text-[#4A88C7] glow-heart" fill="#D0E3F0" />
+                <HeartDoodle className="w-6 h-6 sm:w-10 sm:h-10 text-[#4A88C7] glow-heart" fill="#D0E3F0" />
               </div>
 
-              <h3 className="font-handwriting text-3xl sm:text-4xl font-bold text-[#3A75B4] mb-3">
+              <h3 className="font-handwriting text-xl xs:text-2xl sm:text-4xl font-bold text-[#3A75B4] mb-1.5 sm:mb-3">
                 To My Favorite Person 🧢
               </h3>
 
               {/* Love Letter Body */}
-              <div className="space-y-3 font-handwriting text-xl sm:text-2xl text-[#1E3A5F] leading-relaxed text-left bg-[#EDF4F8] p-4 sm:p-5 rounded-xl border border-[#B8D5EA] shadow-inner">
+              <div className="space-y-1.5 sm:space-y-3 font-handwriting text-base xs:text-lg sm:text-2xl text-[#1E3A5F] leading-relaxed text-left bg-[#EDF4F8] p-3 sm:p-5 rounded-xl border border-[#B8D5EA] shadow-inner max-h-[55vh] overflow-y-auto">
                 <p>Dear favorite human,</p>
                 <p>
                   Happy Boyfriend Day to my favorite human in the world!
@@ -124,14 +124,14 @@ export function LoveLetterEnvelope() {
                 <p>
                   Every ordinary day rasanya jauh lebih warm, sweet, and happy selama ada kamu di samping aku. I'm so lucky to have you ♡
                 </p>
-                <p className="text-right font-bold text-[#3A75B4] pt-2">
+                <p className="text-right font-bold text-[#3A75B4] pt-1 sm:pt-2">
                   Forever & always yours, <br />
                   Happy Boyfriend Day ♡
                 </p>
               </div>
 
               {/* Interactive hint */}
-              <p className="mt-4 font-rounded text-xs text-[#4A88C7] opacity-90 font-medium">
+              <p className="mt-2 font-rounded text-[9px] sm:text-xs text-[#4A88C7] opacity-90 font-medium">
                 (Tap di mana aja untuk kirim cinta! ☁️)
               </p>
             </motion.div>
@@ -143,7 +143,7 @@ export function LoveLetterEnvelope() {
 }
 
 // -----------------------------------------------------------------------------
-// 2. CANVA STICKERS & BADGES (SKY BLUE BOYFRIEND AESTHETIC)
+// 2. CANVA STICKERS & BADGES (RESPONSIVE)
 // -----------------------------------------------------------------------------
 export function CanvaBadge({ text = 'FAVORITE', variant = 'skyblue', className = '', customQuote = null }) {
   const [activeMsg, setActiveMsg] = useState(null);
@@ -169,9 +169,9 @@ export function CanvaBadge({ text = 'FAVORITE', variant = 'skyblue', className =
         {activeMsg && (
           <motion.div
             initial={{ opacity: 0, y: 5, scale: 0.8 }}
-            animate={{ opacity: 1, y: -30, scale: 1 }}
-            exit={{ opacity: 0, y: -40 }}
-            className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#EDF4F8] text-[#1E3A5F] text-sm font-handwriting font-bold px-3 py-1 rounded-full border border-[#5B9BD5] shadow-md whitespace-nowrap z-30 pointer-events-none"
+            animate={{ opacity: 1, y: -25, scale: 1 }}
+            exit={{ opacity: 0, y: -35 }}
+            className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#EDF4F8] text-[#1E3A5F] text-xs sm:text-sm font-handwriting font-bold px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full border border-[#5B9BD5] shadow-md whitespace-nowrap z-30 pointer-events-none"
           >
             {activeMsg}
           </motion.div>
@@ -182,7 +182,7 @@ export function CanvaBadge({ text = 'FAVORITE', variant = 'skyblue', className =
         type="button"
         whileTap={{ scale: 0.9 }}
         onClick={handleTap}
-        className={`inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full border-2 border-dashed shadow-xs font-handwriting font-bold text-lg select-none cursor-pointer transform hover:scale-105 transition-transform ${styles[variant] || styles.skyblue} ${className}`}
+        className={`inline-flex items-center gap-1 sm:gap-1.5 px-2.5 py-0.5 sm:px-3.5 sm:py-1 rounded-full border-1.5 sm:border-2 border-dashed shadow-xs font-handwriting font-bold text-xs sm:text-lg select-none cursor-pointer transform hover:scale-105 transition-transform ${styles[variant] || styles.skyblue} ${className}`}
       >
         <span>✦</span>
         <span>{text}</span>
@@ -196,10 +196,10 @@ export function CanvaBadge({ text = 'FAVORITE', variant = 'skyblue', className =
 // -----------------------------------------------------------------------------
 export function PostageStamp({ text = 'LOVE MAIL', date = '2026' }) {
   return (
-    <div className="inline-block bg-[#EDF4F8] p-1.5 rounded-xs border-2 border-dashed border-[#5B9BD5] shadow-xs select-none">
-      <div className="bg-[#D0E3F0] px-2 py-1 text-center border border-[#7CB5EC]">
-        <p className="font-rounded text-[9px] font-bold text-[#1E3A5F] tracking-widest uppercase">{text}</p>
-        <p className="font-mono text-[8px] text-[#4A88C7]">{date}</p>
+    <div className="inline-block bg-[#EDF4F8] p-1 sm:p-1.5 rounded-xs border border-dashed sm:border-2 border-[#5B9BD5] shadow-xs select-none">
+      <div className="bg-[#D0E3F0] px-1.5 py-0.5 sm:px-2 sm:py-1 text-center border border-[#7CB5EC]">
+        <p className="font-rounded text-[8px] sm:text-[9px] font-bold text-[#1E3A5F] tracking-widest uppercase">{text}</p>
+        <p className="font-mono text-[7px] sm:text-[8px] text-[#4A88C7]">{date}</p>
       </div>
     </div>
   );
@@ -226,9 +226,9 @@ export function StickyNote({ text = 'remember this ♡', rotation = 3, color = '
         {isTapped && (
           <motion.div
             initial={{ opacity: 0, y: 0 }}
-            animate={{ opacity: 1, y: -35 }}
+            animate={{ opacity: 1, y: -30 }}
             exit={{ opacity: 0 }}
-            className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white text-[#3A75B4] font-handwriting text-lg px-3 py-0.5 rounded-full border border-[#5B9BD5] shadow-lg whitespace-nowrap z-30 pointer-events-none font-bold"
+            className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white text-[#3A75B4] font-handwriting text-sm sm:text-lg px-2.5 py-0.5 rounded-full border border-[#5B9BD5] shadow-lg whitespace-nowrap z-30 pointer-events-none font-bold"
           >
             Selalu ingat kamu! ☁️
           </motion.div>
@@ -240,9 +240,9 @@ export function StickyNote({ text = 'remember this ♡', rotation = 3, color = '
         style={{ rotate: `${rotation}deg` }}
         whileTap={{ scale: 0.95 }}
         onClick={handleTap}
-        className={`relative p-4 rounded-xs shadow-md border-t-4 ${bg} w-44 font-handwriting text-xl select-none cursor-pointer hover:rotate-0 transition-transform text-left`}
+        className={`relative p-2.5 sm:p-4 rounded-xs shadow-md border-t-3 sm:border-t-4 ${bg} w-32 sm:w-44 font-handwriting text-base sm:text-xl select-none cursor-pointer hover:rotate-0 transition-transform text-left`}
       >
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-4 h-4 bg-sky-500 rounded-full shadow-xs border border-sky-700 pointer-events-none" />
+        <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 w-3 h-3 sm:w-4 sm:h-4 bg-sky-500 rounded-full shadow-xs border border-sky-700 pointer-events-none" />
         <p className="text-center">{text}</p>
       </motion.button>
     </div>
@@ -252,7 +252,7 @@ export function StickyNote({ text = 'remember this ♡', rotation = 3, color = '
 // -----------------------------------------------------------------------------
 // 5. PAPER CLIP SVG
 // -----------------------------------------------------------------------------
-export function PaperClip({ className = 'w-6 h-10 text-[#5B9BD5]' }) {
+export function PaperClip({ className = 'w-5 h-8 sm:w-6 sm:h-10 text-[#5B9BD5]' }) {
   return (
     <svg viewBox="0 0 24 48" className={className} fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
       <path d="M7 12 v20 a5 5 0 0 0 10 0 v-24 a8 8 0 0 0 -16 0 v26 a11 11 0 0 0 22 0 v-20" />

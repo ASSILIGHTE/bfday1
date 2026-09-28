@@ -215,7 +215,7 @@ export default function App() {
       {/* ----------------------------------------------------------------- */}
       {/* FIXED VIEWPORT FRAME                                              */}
       {/* ----------------------------------------------------------------- */}
-      <div className="fixed inset-0 w-full h-full flex flex-col justify-center items-center overflow-hidden z-10 px-4 sm:px-8 pointer-events-none">
+      <div className="fixed inset-0 w-full h-full flex flex-col justify-center items-center overflow-hidden z-10 px-2 xs:px-4 sm:px-8 pointer-events-none">
         
         <motion.div
           style={{
@@ -234,12 +234,12 @@ export default function App() {
               y: openingY,
               pointerEvents: openingPointerEvents
             }}
-            className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 z-30"
+            className="absolute inset-0 flex flex-col items-center justify-center text-center p-3 xs:p-6 z-30"
           >
-            <div className="absolute top-10 left-6 rotate-[-12deg] hidden sm:block z-30">
+            <div className="absolute top-4 left-3 sm:top-10 sm:left-6 rotate-[-12deg] z-30 scale-75 xs:scale-90 sm:scale-100 origin-top-left">
               <PostageStamp text="SKY MAIL ☁️" date="03 OCT" />
             </div>
-            <div className="absolute top-14 right-8 rotate-[8deg] hidden sm:block z-30">
+            <div className="absolute top-4 right-3 sm:top-14 sm:right-8 rotate-[8deg] z-30 scale-75 xs:scale-90 sm:scale-100 origin-top-right">
               <CanvaBadge text="MY FAVORITE BOY 🧢" variant="skyblue" customQuote="My favorite boy in the whole world! 🧢" />
             </div>
 
@@ -254,16 +254,16 @@ export default function App() {
                 ease: 'easeInOut'
               }}
               onClick={() => soundFx.playHeartChime()}
-              className="cursor-pointer mb-3 group"
+              className="cursor-pointer mb-2 xs:mb-3 group"
             >
-              <HeartDoodle className="w-16 h-16 sm:w-20 sm:h-20 text-[#4A88C7] glow-heart transform group-hover:scale-110 transition-transform" fill="#EDF4F8" />
+              <HeartDoodle className="w-14 h-14 sm:w-20 sm:h-20 text-[#4A88C7] glow-heart transform group-hover:scale-110 transition-transform" fill="#EDF4F8" />
             </motion.div>
 
-            <h1 className="font-handwriting text-5xl sm:text-7xl font-bold text-[#1E3A5F] tracking-tight drop-shadow-sm">
+            <h1 className="font-handwriting text-3xl xs:text-5xl sm:text-7xl font-bold text-[#1E3A5F] tracking-tight drop-shadow-sm">
               Just Us Being Us <span className="text-[#4A88C7]">♡</span>
             </h1>
 
-            <p className="mt-3 text-lg sm:text-2xl font-rounded text-[#3A75B4] max-w-md opacity-90 leading-relaxed font-medium">
+            <p className="mt-2 sm:mt-3 text-sm xs:text-lg sm:text-2xl font-rounded text-[#3A75B4] max-w-xs sm:max-w-md opacity-90 leading-relaxed font-medium">
               Happy Boyfriend Day! Ini koleksi kecil momen-momen favoritku bersamamu ♡
             </p>
 
@@ -271,19 +271,19 @@ export default function App() {
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleStartClick}
-              className="mt-8 group flex items-center gap-2.5 bg-[#EDF4F8] hover:bg-[#D0E3F0] text-[#1E3A5F] font-medium px-6 py-3.5 rounded-full border border-[#5B9BD5] shadow-lg hover:shadow-xl transition-all duration-300"
+              className="mt-5 sm:mt-8 group flex items-center gap-2 bg-[#EDF4F8] hover:bg-[#D0E3F0] text-[#1E3A5F] font-medium px-5 py-2.5 sm:px-6 sm:py-3.5 rounded-full border border-[#5B9BD5] shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <span className="font-rounded text-base font-bold">let's go</span>
-              <span className="group-hover:translate-x-1 transition-transform font-bold text-lg text-[#4A88C7]">→</span>
+              <span className="font-rounded text-sm sm:text-base font-bold">let's go</span>
+              <span className="group-hover:translate-x-1 transition-transform font-bold text-base sm:text-lg text-[#4A88C7]">→</span>
             </motion.button>
 
             <motion.div
-              animate={{ y: [0, 8, 0] }}
+              animate={{ y: [0, 6, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
-              className="absolute bottom-6 flex flex-col items-center text-xs font-handwriting text-[#3A75B4] opacity-80"
+              className="absolute bottom-3 sm:bottom-6 flex flex-col items-center text-[10px] sm:text-xs font-handwriting text-[#3A75B4] opacity-80"
             >
               <span>scroll down untuk masuk ke dunia memori kita ♡</span>
-              <ArrowDown className="w-4 h-4 mt-1 text-[#4A88C7]" />
+              <ArrowDown className="w-3.5 h-3.5 sm:w-4 sm:h-4 mt-0.5 sm:mt-1 text-[#4A88C7]" />
             </motion.div>
           </motion.div>
 
@@ -296,22 +296,22 @@ export default function App() {
               y: sec1Y,
               pointerEvents: sec1PointerEvents
             }}
-            className="absolute inset-0 flex flex-col items-center justify-center px-4 z-20"
+            className="absolute inset-0 flex flex-col items-center justify-center px-1 xs:px-3 sm:px-4 z-20"
           >
-            <div className="absolute top-4 left-4 sm:left-10 z-30">
+            <div className="absolute top-2 left-2 sm:top-4 sm:left-10 z-30 scale-75 xs:scale-90 sm:scale-100 origin-top-left">
               <StickyNote text="remember to smile ya! 😊" rotation={-5} color="skyblue" />
             </div>
 
-            <div className="absolute top-6 right-4 sm:right-12 z-30">
+            <div className="absolute top-2 right-2 sm:top-6 sm:right-12 z-30 scale-75 xs:scale-90 sm:scale-100 origin-top-right">
               <CanvaBadge text="100% BEST BOYFRIEND 🏆" variant="navy" customQuote="100% official best boyfriend award 🏆" />
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-8 items-center w-full max-w-4xl mt-12 sm:mt-0">
+            <div className="grid grid-cols-3 gap-1.5 xs:gap-3 sm:gap-8 items-center w-full max-w-4xl mt-10 sm:mt-0 px-0.5 sm:px-4">
               <PolaroidCard
                 src="/photos/photo1.jpeg"
-                caption="first silly laugh kita"
+                caption="first silly laugh"
                 subText="♡ warm coffee date"
-                rotation={-6}
+                rotation={-5}
                 tapePosition="top-left"
                 tapeColor="skyblue"
                 customQuote="The day I fell in love with your laugh ☕"
@@ -319,9 +319,9 @@ export default function App() {
               />
               <PolaroidCard
                 src="/photos/photo2.jpeg"
-                caption="my favorite human ever"
-                subText="selalu bikin aku senyum"
-                rotation={4}
+                caption="my favorite human"
+                subText="selalu bikin senyum"
+                rotation={3}
                 tapePosition="top-center"
                 tapeColor="cloud"
                 customQuote="My favorite smile in the whole world! ✨"
@@ -329,7 +329,7 @@ export default function App() {
               />
               <PolaroidCard
                 src="/photos/photo3.jpeg"
-                caption="tempat paling aman & cozy"
+                caption="tempat paling aman"
                 subText="just us being cozy"
                 rotation={-3}
                 tapePosition="top-right"
@@ -341,7 +341,7 @@ export default function App() {
           </motion.div>
 
           {/* --------------------------------------------------------------- */}
-          {/* SECTION 2: PHOTO CAMERA VIEWFINDER MOMENT (GUARANTEED FLEXBOX NO-OVERLAP) */}
+          {/* SECTION 2: PHOTO CAMERA VIEWFINDER MOMENT                        */}
           {/* --------------------------------------------------------------- */}
           <motion.div
             style={{
@@ -349,11 +349,11 @@ export default function App() {
               y: sec2Y,
               pointerEvents: sec2PointerEvents
             }}
-            className="absolute inset-0 flex flex-col items-center justify-center px-4 z-20"
+            className="absolute inset-0 flex flex-col items-center justify-center px-2 sm:px-4 z-20"
           >
-            <div className="w-full max-w-md relative flex flex-col items-center">
-              {/* TOP ROW BADGES: Clean Flexbox Spacing */}
-              <div className="mb-3 flex flex-wrap items-center justify-center gap-2.5 z-30 w-full">
+            <div className="w-full max-w-[260px] xs:max-w-xs sm:max-w-md relative flex flex-col items-center">
+              {/* TOP ROW BADGES */}
+              <div className="mb-1.5 sm:mb-3 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2.5 z-30 w-full scale-90 sm:scale-100">
                 <CanvaBadge text="COMFORT PERSON ☁️" variant="amber" customQuote="Checked & verified: My comfort person!" />
                 <PostageStamp text="EXPRESS LOVE" date="REC" />
                 <CanvaBadge text="MY HAPPY PLACE 🌅" variant="skyblue" customQuote="My happy place is with you ♡" />
@@ -372,18 +372,18 @@ export default function App() {
                   photoCaption="capturing moment favorit kita 📸"
                 />
 
-                {/* BOTTOM ROW BADGES: Clean Flexbox Spacing Below Polaroid */}
-                <div className="mt-3 flex flex-wrap items-center justify-between gap-2 z-30 w-full px-1">
+                {/* BOTTOM ROW BADGES */}
+                <div className="mt-1.5 sm:mt-3 flex flex-wrap items-center justify-between gap-1.5 sm:gap-2 z-30 w-full px-1 scale-90 sm:scale-100">
                   <CanvaBadge text="100% PERFECT 📸" variant="navy" customQuote="100% picture perfect moment!" />
                   <CanvaBadge text="FILM 35MM 🎞️" variant="cloud" customQuote="Picture perfect moment 📸" />
                 </div>
 
                 {/* Twinkle Sparkles Background Layer */}
                 <FloatingDoodle className="absolute -top-6 left-1/4 z-10" delay={0.3}>
-                  <SparkleDoodle className="w-6 h-6 text-[#F59E0B]" />
+                  <SparkleDoodle className="w-5 h-5 sm:w-6 sm:h-6 text-[#F59E0B]" />
                 </FloatingDoodle>
                 <FloatingDoodle className="absolute -bottom-6 right-1/4 z-10" delay={0.7}>
-                  <SparkleDoodle className="w-5 h-5 text-[#5B9BD5]" />
+                  <SparkleDoodle className="w-4 h-4 sm:w-5 sm:h-5 text-[#5B9BD5]" />
                 </FloatingDoodle>
               </div>
             </div>
@@ -398,35 +398,35 @@ export default function App() {
               y: sec3Y,
               pointerEvents: sec3PointerEvents
             }}
-            className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center z-40"
+            className="absolute inset-0 flex flex-col items-center justify-center px-2 sm:px-4 text-center z-40"
           >
-            <div className="flex flex-wrap items-center justify-center gap-4 my-1">
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 my-0.5 sm:my-1 scale-90 xs:scale-95 sm:scale-100">
               <RunawaySmiley />
               <NotificationBubble photoSrc="/photos/photo5.jpeg" />
             </div>
 
-            <div className="my-2 z-50">
+            <div className="my-1 sm:my-2 z-50">
               <LoveLetterEnvelope />
             </div>
 
-            <div className="flex justify-center items-center gap-4 sm:gap-6 my-2">
+            <div className="flex justify-center items-center gap-2 xs:gap-4 sm:gap-6 my-1 sm:my-2">
               <PolaroidCard
                 src="/photos/photo5.jpeg"
-                caption="pelukan hangat random"
-                rotation={-7}
+                caption="pelukan hangat"
+                rotation={-6}
                 tapePosition="top-left"
                 tapeColor="skyblue"
                 customQuote="Peluk aku lebih kenceng! 🤗"
-                className="w-32 sm:w-44"
+                className="w-26 xs:w-32 sm:w-44"
               />
               <PolaroidCard
                 src="/photos/photo6.jpeg"
-                caption="still my favorite human"
-                rotation={6}
+                caption="favorite human"
+                rotation={5}
                 tapePosition="top-right"
                 tapeColor="navy"
                 customQuote="You & me against the world 🤝"
-                className="w-32 sm:w-44"
+                className="w-26 xs:w-32 sm:w-44"
               />
             </div>
           </motion.div>
@@ -440,14 +440,14 @@ export default function App() {
               y: sec4Y,
               pointerEvents: sec4PointerEvents
             }}
-            className="absolute inset-0 flex flex-col items-center justify-center p-4 z-30"
+            className="absolute inset-0 flex flex-col items-center justify-center p-2 xs:p-4 z-30"
           >
             <motion.div
               animate={{
                 y: [0, -6, 0]
               }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              className="relative z-20 w-full max-w-sm sm:max-w-md mx-auto"
+              className="relative z-20 w-full max-w-[210px] xs:max-w-[260px] sm:max-w-md mx-auto"
             >
               <PolaroidCard
                 src="/photos/photo_main.jpeg"
@@ -460,22 +460,22 @@ export default function App() {
                 className="shadow-2xl border-2 border-[#5B9BD5]/40"
               />
 
-              <div className="absolute -top-7 -left-10 rotate-[-12deg] hidden sm:block z-30">
+              <div className="absolute -top-5 -left-6 rotate-[-12deg] z-30 scale-75 sm:scale-100 origin-top-left">
                 <CanvaBadge text="PARTNER IN CRIME 🤝" variant="skyblue" customQuote="Partners in crime selamanya 🤝" />
               </div>
-              <div className="absolute -bottom-6 -right-8 rotate-[12deg] hidden sm:block z-30">
+              <div className="absolute -bottom-5 -right-6 rotate-[12deg] z-30 scale-75 sm:scale-100 origin-bottom-right">
                 <CanvaBadge text="SKY FULL OF STARS ✨" variant="amber" customQuote="You make my sky full of stars ♡" />
               </div>
             </motion.div>
 
-            <div className="text-center mt-5 z-30 max-w-lg px-2">
-              <p className="font-handwriting text-2xl sm:text-3xl text-[#3A75B4]">
+            <div className="text-center mt-3 sm:mt-5 z-30 max-w-lg px-2">
+              <p className="font-handwriting text-lg xs:text-2xl sm:text-3xl text-[#3A75B4]">
                 Life is a little more fun & warm with you.
               </p>
-              <h2 className="font-handwriting text-4xl sm:text-6xl font-bold text-[#4A88C7] mt-1 drop-shadow-sm">
+              <h2 className="font-handwriting text-2xl xs:text-4xl sm:text-6xl font-bold text-[#4A88C7] mt-0.5 sm:mt-1 drop-shadow-sm">
                 Happy Boyfriend Day ♡
               </h2>
-              <p className="font-rounded text-xs sm:text-sm text-[#1E3A5F] mt-2 tracking-wide font-medium leading-relaxed max-w-md mx-auto">
+              <p className="font-rounded text-[11px] xs:text-xs sm:text-sm text-[#1E3A5F] mt-1 sm:mt-2 tracking-wide font-medium leading-relaxed max-w-xs xs:max-w-sm sm:max-w-md mx-auto">
                 Happy Boyfriend Day to my favorite human in the world! Terima kasih ya udah selalu jadi tempat ternyaman, pahlawan tanpa jubahku, dan alasan aku tersenyum setiap hari. I'm so lucky to have you ♡
               </p>
             </div>
@@ -484,9 +484,9 @@ export default function App() {
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleReplayClick}
-              className="mt-5 z-30 flex items-center gap-2 bg-[#EDF4F8] hover:bg-[#D0E3F0] text-[#1E3A5F] px-5 py-2.5 rounded-full border border-[#5B9BD5] shadow-md font-rounded text-xs sm:text-sm font-bold transition-all"
+              className="mt-3 sm:mt-5 z-30 flex items-center gap-2 bg-[#EDF4F8] hover:bg-[#D0E3F0] text-[#1E3A5F] px-4 py-2 sm:px-5 sm:py-2.5 rounded-full border border-[#5B9BD5] shadow-md font-rounded text-xs sm:text-sm font-bold transition-all"
             >
-              <RefreshCw className="w-4 h-4 text-[#4A88C7]" />
+              <RefreshCw className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#4A88C7]" />
               <span>replay memory journey ✨</span>
             </motion.button>
           </motion.div>

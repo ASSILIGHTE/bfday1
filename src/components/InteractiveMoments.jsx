@@ -25,29 +25,29 @@ export function RunawaySmiley() {
   };
 
   return (
-    <div className="relative inline-block my-4">
+    <div className="relative inline-block my-1 sm:my-4">
       <motion.div
         animate={{ x: pos.x, y: pos.y }}
         transition={{ type: 'spring', stiffness: 300, damping: 20 }}
         onMouseEnter={handleHover}
         onClick={handleClick}
-        className="cursor-pointer group flex items-center gap-2 bg-[#FAF6EE] px-4 py-2.5 rounded-full border border-[#F2B5AA] shadow-md hover:shadow-lg select-none"
+        className="cursor-pointer group flex items-center gap-1.5 sm:gap-2 bg-[#FAF6EE] px-3 py-1.5 sm:px-4 sm:py-2.5 rounded-full border border-[#F2B5AA] shadow-md hover:shadow-lg select-none"
       >
         {isCaught ? (
           <motion.div
             initial={{ scale: 0, rotate: -180 }}
-            animate={{ scale: 1.2, rotate: 0 }}
-            className="flex items-center gap-2"
+            animate={{ scale: 1.1, rotate: 0 }}
+            className="flex items-center gap-1.5 sm:gap-2"
           >
-            <HeartDoodle className="w-6 h-6 text-[#E78878] glow-heart" fill="#E78878" />
-            <span className="font-handwriting text-xl text-[#E78878]">Yay! Caught my heart ♡</span>
-            <SparkleDoodle className="w-4 h-4 text-amber-400" />
+            <HeartDoodle className="w-4 h-4 sm:w-6 sm:h-6 text-[#E78878] glow-heart" fill="#E78878" />
+            <span className="font-handwriting text-base sm:text-xl text-[#E78878]">Yay! Caught my heart ♡</span>
+            <SparkleDoodle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400" />
           </motion.div>
         ) : (
           <>
-            <SmileyDoodle className="w-6 h-6 text-[#8C6D58] group-hover:scale-110 transition-transform" />
-            <span className="font-handwriting text-lg text-[#6B4E3D]">
-              Hey, come back... <span className="text-xs font-rounded text-[#8C6D58] opacity-75">(Tap me!)</span>
+            <SmileyDoodle className="w-4 h-4 sm:w-6 sm:h-6 text-[#8C6D58] group-hover:scale-110 transition-transform" />
+            <span className="font-handwriting text-sm sm:text-lg text-[#6B4E3D]">
+              Hey, come back... <span className="text-[10px] sm:text-xs font-rounded text-[#8C6D58] opacity-75">(Tap me!)</span>
             </span>
           </>
         )}
@@ -72,21 +72,21 @@ export function NotificationBubble({ photoSrc }) {
   };
 
   return (
-    <div className="relative inline-block my-4">
+    <div className="relative inline-block my-1 sm:my-4">
       {/* Floating Pill Trigger */}
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={handleOpen}
-        className="flex items-center gap-3 bg-white/90 backdrop-blur-md px-4 py-3 rounded-2xl shadow-xl border border-[#FAD2E1] text-left group"
+        className="flex items-center gap-2 sm:gap-3 bg-white/90 backdrop-blur-md px-3 py-1.5 sm:px-4 sm:py-3 rounded-xl sm:rounded-2xl shadow-xl border border-[#FAD2E1] text-left group"
       >
-        <div className="relative bg-[#FFE5D9] p-2 rounded-xl text-[#E78878]">
-          <MessageCircle className="w-5 h-5 fill-[#E78878]/20" />
-          <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-red-500 rounded-full animate-ping" />
+        <div className="relative bg-[#FFE5D9] p-1.5 sm:p-2 rounded-lg sm:rounded-xl text-[#E78878]">
+          <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 fill-[#E78878]/20" />
+          <span className="absolute -top-1 -right-1 w-2 h-2 sm:w-2.5 sm:h-2.5 bg-red-500 rounded-full animate-ping" />
         </div>
         <div>
-          <p className="text-xs font-semibold text-[#8C6D58]">iMessage</p>
-          <p className="text-sm font-rounded text-[#6B4E3D] font-medium group-hover:text-[#E78878] transition-colors">
+          <p className="text-[10px] sm:text-xs font-semibold text-[#8C6D58]">iMessage</p>
+          <p className="text-xs sm:text-sm font-rounded text-[#6B4E3D] font-medium group-hover:text-[#E78878] transition-colors">
             You received a message ♡
           </p>
         </div>
